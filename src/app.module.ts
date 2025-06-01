@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
-import { MakeupModule } from './Products/makeup/makeup.module';
+import { MakeupModule } from './Product/makeup/makeup.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule } from '@nestjs/config'; // Ensure this file exists in the specified path
 import { AuthModule } from 'src/Auth/auth.module';

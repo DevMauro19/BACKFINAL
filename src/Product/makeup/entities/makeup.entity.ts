@@ -1,19 +1,21 @@
-import { Entity, PrimaryColumn, Column, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import 'reflect-metadata';
-import { ProductTest } from 'src/product-tests/entities/product-test.entity';
+import CategoryMakeUp from '../dto/categoryMk';
+import { ProductTest } from '../../../product-test/entities/product-test.entity';
+
 @Entity('makeup')
 export class Makeup {
-  @PrimaryColumn('uuid')
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column('text', { unique: true, nullable: false })
   name: string;
 
   @Column('enum', {
-    enum: ['Lipstick', 'Mascara', 'Foundation', 'Eyeliner', 'Eyeshadow'],
+    enum: CategoryMakeUp,
     nullable: false,
   })
-  category: string;
+  category: CategoryMakeUp;
 
   @Column('integer', { nullable: false })
   stock: number;
@@ -27,4 +29,3 @@ export class Makeup {
   @OneToMany(() => ProductTest, (productTest) => productTest.product)
   tests: ProductTest[];
 }
-//creación de la tabla

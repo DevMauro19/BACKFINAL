@@ -1,14 +1,18 @@
-import { IsInt, IsString, Max, Min, MinLength } from 'class-validator';
-import CategoryMakeUp from './categoryMk'; // Ensure the casing matches the actual file system
+import { IsEnum, IsInt, IsString, Max, Min, MinLength } from 'class-validator';
+import CategoryMakeUp from './categoryMk';
+
 export class CreateMakeupDto {
   @IsString()
   @MinLength(1)
   readonly name: string;
 
-  readonly category: CategoryMakeUp; // Replace with 'string' or define/import 'categoryMK'
+  @IsEnum(CategoryMakeUp, {
+    message: `Category must be one of: ${Object.values(CategoryMakeUp).join(', ')}`,
+  })
+  readonly category: CategoryMakeUp;
 
   @IsInt()
-  @Min(0) //para indicar que no hay producto
+  @Min(0)
   readonly stock: number;
 
   @IsString()

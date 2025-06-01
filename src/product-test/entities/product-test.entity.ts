@@ -1,6 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 import { User } from '../../users/entities/user.entity';
-import { Makeup } from '../../Products/makeup/entities/makeup.entity'; // Corrected relative path to MakeupProduct
+import { Makeup } from '../../Product/makeup/entities/makeup.entity'; // Corrected relative path to MakeupProduct
 
 @Entity('product_tests') // Nombre de la tabla en la base de datos.
 export class ProductTest {

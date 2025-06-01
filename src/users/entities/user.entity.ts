@@ -8,8 +8,8 @@ import {
   JoinTable,
   CreateDateColumn,
 } from 'typeorm';
-import { ProductTest } from '../../product-tests/entities/product-test.entity';
-import { Makeup } from '../../Products/makeup/entities/makeup.entity';
+import { ProductTest } from '../../product-test/entities/product-test.entity';
+import { Makeup } from '../../Product/makeup/entities/makeup.entity';
 
 export enum UserRole {
   ADMIN = 'Admin',

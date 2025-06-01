@@ -10,7 +10,7 @@ import {
   OneToMany,
 } from 'typeorm';
 import { User } from '../../users/entities/user.entity';
-import { Makeup } from '../../Products/makeup/entities/makeup.entity';
+import { Makeup } from '../../Product/makeup/entities/makeup.entity';
 
 export enum TransactionStatus {
   PENDING = 'PENDING',
